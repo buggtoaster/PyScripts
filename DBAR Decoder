@@ -1,0 +1,26 @@
+
+using static System.Net.Mime.MediaTypeNames;
+using System.Security.Cryptography;
+using System.Text;
+
+string result;
+RijndaelManaged rijndaelManaged = new RijndaelManaged();
+string text = {g.d + Install ID + Hardware ID};
+string A_0 = {Response from domain};
+
+
+Console.WriteLine("Hello, World!");
+byte[] array = Convert.FromBase64String(A_0);
+byte[] bytes = Encoding.ASCII.GetBytes(text.Length.ToString());
+PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(text, bytes);
+ICryptoTransform transform = rijndaelManaged.CreateDecryptor(passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+MemoryStream memoryStream = new MemoryStream(array);
+CryptoStream cryptoStream = new CryptoStream(memoryStream, transform, CryptoStreamMode.Read);
+byte[] array2 = new byte[array.Length];
+int count = cryptoStream.Read(array2, 0, array2.Length);
+memoryStream.Close();
+cryptoStream.Close();
+result = Encoding.Unicode.GetString(array2, 0, count);
+Console.WriteLine(result);
+
+
