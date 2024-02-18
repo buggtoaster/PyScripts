@@ -1,3 +1,11 @@
+//This script is written in C# and will decode the HTTP response from domains related to DBAR. 
+//For the script to work properly, you will need to replace "string A_0" with the encrypted HTTP response and "string text" with the value of "function g.d + the Install ID assigned to the malware instance + the Hardware ID of the infected host".
+//For more information on the DBAR malware, check out our report here: https://www.bugtoaster.co/malware-analysis/dbar
+
+//Author: Nate @buggtoaster
+//Website: https://www.bugtoaster.co/
+//Contact: nate@bugtoaster.co
+
 
 using static System.Net.Mime.MediaTypeNames;
 using System.Security.Cryptography;
