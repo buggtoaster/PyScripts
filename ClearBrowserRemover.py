@@ -1,5 +1,9 @@
 # Script to remove artifacts related to the ClearBar and ClearBrowser.
-# No arguments need to be passed, just run the script and it will report what was removed
+# No arguments need to be passed, just run the script and it will report what was removed.
+
+# Author: Nate @buggtoaster
+# Website: https://www.bugtoaster.co/
+# Contact: nate@bugtoaster.co
 
 import psutil
 import subprocess
